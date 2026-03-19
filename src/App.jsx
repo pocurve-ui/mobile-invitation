@@ -72,7 +72,7 @@ function App() {
 
   const slideVariants = {
     initial: (direction) => ({
-      y: direction === 0 ? 0 : (direction > 0 ? '66%' : '-66%'),
+      y: direction === 0 ? 0 : (direction > 0 ? '100%' : '-100%'),
       opacity: direction === 0 ? 1 : 0,
       scale: 1,
       zIndex: 1
@@ -87,7 +87,7 @@ function App() {
     exit: (direction) => ({
       y: direction < 0 ? '100%' : '-100%',
       opacity: 0,
-      scale: 0.95,
+      scale: 1,
       zIndex: 0,
       transition: { duration: 0.85, ease: [0.23, 1, 0.32, 1] }
     })
@@ -118,7 +118,7 @@ function App() {
         </div>
       )}
 
-      <AnimatePresence custom={direction}>
+      <AnimatePresence custom={direction} mode="wait" initial={false}>
         <motion.div
            key={currentPage}
            custom={direction}
@@ -126,7 +126,7 @@ function App() {
            initial="initial"
            animate="animate"
            exit="exit"
-           className={`absolute inset-0 h-full will-change-transform ${currentPage > 0 ? 'w-full max-w-[480px] mx-auto left-0 right-0' : 'w-full inset-x-0'}`}
+           className="absolute inset-0 h-full will-change-transform w-full max-w-[480px] mx-auto left-0 right-0"
          >
           <CurrentPageComponent 
             setCurrentPage={setCurrentPage} 

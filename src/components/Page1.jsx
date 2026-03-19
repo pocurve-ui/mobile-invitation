@@ -8,7 +8,7 @@ export default function Page1({ setCurrentPage, setDirection }) {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col pt-[250px] pb-24 px-6 overflow-hidden">
+    <div className="w-full h-full relative flex flex-col pt-[210px] pb-24 px-6 overflow-hidden">
       {/* 왼쪽부터 시작되는 중앙 콘텐츠 */}
       <motion.div 
         className="z-10 flex-1 flex flex-col max-w-lg"
@@ -18,7 +18,7 @@ export default function Page1({ setCurrentPage, setDirection }) {
       >
         <div className="w-16 h-[1px] bg-gray-500 mb-10"></div>
         
-        <div className="space-y-8 text-[15px] font-normal leading-[1.8] text-gray-200 tracking-wide break-keep">
+        <div className="space-y-8 text-[16px] font-normal leading-[1.8] text-gray-200 tracking-wide break-keep">
           <p>
             제주에서 아시아 최고의 STEAM 교육 플랫폼을<br/>
             제공할 <strong className="font-bold text-white">“풀턴 사이언스 아카데미 애서튼(FSAA)”</strong>이<br/>

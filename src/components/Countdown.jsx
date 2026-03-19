@@ -34,9 +34,8 @@ export default function Countdown({ targetDate }) {
   return (
     <div className="flex flex-col items-center justify-center space-y-2 relative z-20 w-full text-center">
       {/* 텍스트 크기 이전의 80% 추가 축소 (text-base md:text-2xl 정도), 자간(tracking-normal), 바탕(font-medium) */}
-      <div className="text-white text-base md:text-2xl tracking-normal tabular-nums">
-        <span className="font-bold mr-2">착공식까지</span>
-        <span className="font-light">
+      <div className="text-white tracking-normal tabular-nums flex items-baseline justify-center">
+        <span className="font-thin text-[1.52rem] md:text-[2.2rem]">
           {pad(timeLeft.days)}:{pad(timeLeft.hours)}:{pad(timeLeft.minutes)}:{pad(timeLeft.seconds)}
           <span className="text-[#ff00a2]">:{pad(timeLeft.milliseconds)}</span>
         </span>

@@ -20,7 +20,7 @@ export default function Page3({ setCurrentPage, setDirection }) {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col pt-[210px] pb-24 px-6 overflow-hidden">
+    <div className="w-full h-full relative flex flex-col pt-[200px] pb-24 px-6 overflow-hidden">
       <motion.div 
         className="z-10 flex-1 flex flex-col max-w-lg w-full max-h-full"
         initial={{ opacity: 0, y: 5 }}
@@ -29,7 +29,7 @@ export default function Page3({ setCurrentPage, setDirection }) {
       >
         <div className="space-y-1 w-full text-white">
           {schedule.map((item, index) => (
-            <div key={index} className="flex flex-col py-3 border-b border-gray-600/50 text-[16px]">
+            <div key={index} className="flex flex-col py-2 border-b border-gray-600/50 text-[16px]">
               <div className="flex w-full">
                 <div className="font-bold tracking-wider shrink-0 w-[140px] text-white">
                   {item.time}

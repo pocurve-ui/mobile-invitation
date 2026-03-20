@@ -8,8 +8,8 @@ export default function Page0({ setDirection, setCurrentPage }) {
   const [showPattern, setShowPattern] = useState(false);
 
   useEffect(() => {
-    // 3.5초 후 패턴 웨이브 애니메이션 마운트 (기존 5초에서 단축)
-    const t = setTimeout(() => setShowPattern(true), 3500);
+    // 0.1초 후 패턴 웨이브 애니메이션 마운트
+    const t = setTimeout(() => setShowPattern(true), 100);
     return () => clearTimeout(t);
   }, []);
 
@@ -20,24 +20,33 @@ export default function Page0({ setDirection, setCurrentPage }) {
 
   return (
     <div className="w-full h-full relative flex flex-col items-center pt-12 pb-6 px-4">
+      {/* CSS 애니메이션 정의 */}
+      <style>
+        {`
+          @keyframes floating {
+            0% { transform: translateY(20px); }
+            50% { transform: translateY(50px); }
+            100% { transform: translateY(20px); }
+          }
+          .floating-compass {
+            animation: floating 6s ease-in-out infinite;
+            opacity: 0.3;
+          }
+        `}
+      </style>
+
       {/* 배경 나침반 애니메이션 */}
       <motion.div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1.5 }}
+        transition={{ delay: 2.2, duration: 1.2 }}
       >
-        <motion.div
-          animate={{ y: [35, 65, 35], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="w-full flex items-center justify-center"
-        >
-          <img 
-            src="/assets/mainpage_img.png" 
-            alt="배경 나침반 로고" 
-            className="w-[78%] max-w-[506px] object-contain opacity-80"
-          />
-        </motion.div>
+        <img 
+          src="/assets/mainpage_img.png" 
+          alt="배경 나침반 로고" 
+          className="w-[78%] max-w-[506px] object-contain floating-compass"
+        />
       </motion.div>
 
       {/* 패턴 파도 애니메이션 (5초 딜레이 마운트) */}

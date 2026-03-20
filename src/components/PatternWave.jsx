@@ -47,9 +47,8 @@ export default function PatternWave() {
   const [waveIndex, setWaveIndex] = useState(0);
 
   useEffect(() => {
-    // 도형 점멸 지속 시간 3초 + 최대 딜레이 3초 = 파도 종료 시간 6초
-    // 텀 2초 = 한 사이클 8초 (8000ms)
-    const waveCycleTime = 8000; 
+    // 한 사이클 5초 (5000ms)로 단축
+    const waveCycleTime = 5000; 
     const timer = setInterval(() => {
       setWaveIndex(prev => (prev + 1) % waveColors.length);
     }, waveCycleTime);
@@ -89,42 +88,52 @@ export default function PatternWave() {
 
   return (
     <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none z-10 overflow-hidden mix-blend-screen">
+      <style>
+        {`
+          @keyframes wave-fade {
+            0% { opacity: 0; transform: scale(0.95); }
+            50% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.95); }
+          }
+          .wave-shape {
+            backface-visibility: hidden;
+            transform-box: fill-box;
+            transform-origin: center;
+            opacity: 0;
+          }
+        `}
+      </style>
       <svg 
         viewBox="0 0 800 800" 
         className="w-[150vw] h-[150vw] sm:w-[120vw] sm:h-[120vw] md:w-[100vw] md:h-[100vw] max-w-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         <g key={waveIndex}>
           {animatedShapes.map((shape) => {
-            const animationProps = {
-              initial: { opacity: 0, fill: previousColor },
-              animate: { 
-                opacity: [0, 1, 0], 
-                fill: [previousColor, currentColor, currentColor] 
-              },
-              transition: {
-                duration: 3.0,
-                delay: shape.delay,
-                ease: "easeInOut"
-              }
+            const style = {
+              animation: `wave-fade 3s ease-in-out forwards`,
+              animationDelay: `${shape.delay * 0.6}s`,
+              fill: currentColor
             };
 
             if (shape.type === 'rect') {
               return (
-                <motion.rect
-                  key={shape.id}
+                <rect
+                  key={`${shape.id}-${waveIndex}`}
                   x={shape.x}
                   y={shape.y}
                   width={shape.width}
                   height={shape.height}
-                  {...animationProps}
+                  className="wave-shape"
+                  style={style}
                 />
               );
             } else {
               return (
-                <motion.polygon
-                  key={shape.id}
+                <polygon
+                  key={`${shape.id}-${waveIndex}`}
                   points={shape.points}
-                  {...animationProps}
+                  className="wave-shape"
+                  style={style}
                 />
               );
             }

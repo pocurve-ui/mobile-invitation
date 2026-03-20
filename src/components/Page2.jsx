@@ -8,7 +8,7 @@ export default function Page2({ setCurrentPage, setDirection }) {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col pt-[210px] pb-24 px-6 overflow-hidden">
+    <div className="w-full h-full relative flex flex-col pt-[200px] pb-24 px-6 overflow-hidden">
       <motion.div 
         className="z-10 flex-1 flex flex-col max-w-lg w-full"
         initial={{ opacity: 0, y: 5 }}
@@ -18,17 +18,17 @@ export default function Page2({ setCurrentPage, setDirection }) {
 
         <div className="w-full text-[16px] font-normal leading-[1.8] text-white tracking-wide break-keep">
           <div className="flex flex-col mt-0 divide-y divide-gray-600/50">
-            <div className="flex py-3">
+            <div className="flex py-2">
               <span className="font-bold w-12 shrink-0">일시:</span>
               <span>2026년 4월 28일(화) 14:00</span>
             </div>
             
-            <div className="flex py-3">
+            <div className="flex py-2">
               <span className="font-bold w-12 shrink-0">장소:</span>
               <span>제주신화월드 랜딩관 볼룸 AB홀</span>
             </div>
  
-            <div className="flex py-3">
+            <div className="flex py-2">
               <span className="font-bold w-12 shrink-0">주최:</span>
               <span>FSAA제주국제학교</span>
             </div>

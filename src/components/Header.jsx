@@ -27,12 +27,12 @@ export default function Header({ currentPage, changePage }) {
         <img 
           src="/assets/logo_simple.svg" 
           alt="처음으로" 
-          className="h-[29px] w-auto object-contain shrink-0"
+          className="h-[29px] w-auto object-contain shrink-0 brightness-0 invert"
         />
       </div>
 
       {/* 네비게이터 메뉴 */}
-      <nav className="self-end flex flex-col items-start space-y-2">
+      <nav className="self-end flex flex-col items-start space-y-[2px]">
         {menus.map((menu, index) => {
           const isActive = index === activeMenuIndex;
           return (
@@ -41,8 +41,8 @@ export default function Header({ currentPage, changePage }) {
               onClick={() => {
                 if (menu.targetPage !== -1) changePage(0, menu.targetPage);
               }}
-              className={`text-[19px] tracking-wider transition-colors cursor-pointer active:opacity-50 flex items-center ${
-                isActive ? `${menu.activeColor} font-bold underline underline-offset-[5px] decoration-[1px]` : 'text-gray-300 font-normal'
+              className={`text-[19px] tracking-normal transition-colors cursor-pointer active:opacity-50 flex items-center ${
+                isActive ? `${menu.activeColor} font-bold underline underline-offset-[5px] decoration-[1px]` : 'text-[#b6b6b6] font-normal'
               }`}
             >
               {menu.name}

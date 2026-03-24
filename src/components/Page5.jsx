@@ -20,16 +20,16 @@ export default function Page5() {
         </div>
 
         {/* 구분선 */}
-        <div className="w-full h-[1px] bg-gray-600/50 mb-10"></div>
+        <div className="w-full h-[1px] bg-white/20 mb-10"></div>
 
         {/* 연락처 정보 */}
-        <div className="space-y-6 text-[13px] text-white font-normal leading-relaxed tracking-wide">
-          <div className="space-y-1">
+        <div className="space-y-3 text-[13px] text-gray-400 font-normal leading-[1.1] tracking-tight">
+          <div className="space-y-[3px]">
             <p>2432, Boseong-ri / 1174, Gueok-ri, Daejeong-eup,</p>
             <p>Seogwipo-si, Jeju-do, Korea</p>
           </div>
           
-          <div className="space-y-1">
+          <div className="space-y-[9px]">
             <p>+82 2 6274 1007</p>
             <p>contact@atherton.sc.kr</p>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import FlipCard from './FlipCard';
 
 export default function Countdown({ targetDate }) {
   const calculateTimeLeft = () => {
@@ -10,11 +11,10 @@ export default function Countdown({ targetDate }) {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-        milliseconds: Math.floor((difference % 1000) / 10) // 2자리 표기를 위해 10으로 나눔
+        seconds: Math.floor((difference / 1000) % 60)
       };
     } else {
-      timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0, milliseconds: 0 };
+      timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
     return timeLeft;
   };
@@ -24,22 +24,18 @@ export default function Countdown({ targetDate }) {
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
-    }, 10); // Update every 10ms for smooth millisecond transition
+    }, 1000); // 1초 단위로 업데이트
     return () => clearInterval(timer);
   }, [targetDate]);
 
   const pad = (num) => String(num).padStart(2, '0');
 
-  // className prop을 받아 위치 지정을 자유롭게 할 수 있도록 수정
   return (
-    <div className="flex flex-col items-center justify-center space-y-2 relative z-20 w-full text-center">
-      {/* 텍스트 크기 이전의 80% 추가 축소 (text-base md:text-2xl 정도), 자간(tracking-normal), 바탕(font-medium) */}
-      <div className="text-white tracking-normal tabular-nums flex items-baseline justify-center">
-        <span className="font-thin text-[1.52rem] md:text-[2.2rem]">
-          {pad(timeLeft.days)}:{pad(timeLeft.hours)}:{pad(timeLeft.minutes)}:{pad(timeLeft.seconds)}
-          <span className="text-[#ff00a2]">:{pad(timeLeft.milliseconds)}</span>
-        </span>
-      </div>
+    <div className="flex justify-center gap-1 sm:gap-2 mt-1 mb-0 relative z-20 w-full max-w-sm mx-auto">
+      <FlipCard digit={timeLeft.days} label="days" />
+      <FlipCard digit={timeLeft.hours} label="hrs." />
+      <FlipCard digit={timeLeft.minutes} label="mins." />
+      <FlipCard digit={timeLeft.seconds} label="secs." />
     </div>
   );
 }

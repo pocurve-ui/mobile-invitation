@@ -11,21 +11,21 @@ export default function Page4() {
         transition={{ delay: 0, duration: 0.2 }}
       >
         {/* 장소 정보 */}
-        <div className="mb-3">
-          <h2 className="text-[16px] font-bold text-white tracking-wide mb-0.5">제주신화월드 랜딩관 볼룸 AB홀</h2>
-          <p className="text-[14px] text-gray-400 font-normal tracking-wide">
+        <div className="mb-[14px]">
+          <h2 className="text-[16px] font-bold text-white tracking-tight mb-0.5">제주신화월드 랜딩관 볼룸 AB홀</h2>
+          <p className="text-[16px] text-gray-300 font-normal tracking-tight">
             제주특별자치도 서귀포시 안덕면 신화역사로 304번길 38
           </p>
         </div>
 
-        {/* 지도 이미지 */}
-        <div className="w-full aspect-video bg-black overflow-hidden mb-8 border border-white/10">
-          <img 
-            src="/assets/map_illust2.png" 
-            alt="지도 안내" 
-            className="w-full h-full object-cover"
-          />
-        </div>
+          {/* 지도 이미지 공간 */}
+          <div className="w-full aspect-video bg-black overflow-hidden mb-4 border-[0.5px] border-white/20 flex items-center justify-center">
+            <img 
+              src="/assets/map_illust3-black.png" 
+              alt="제주신화월드 랜딩 컨벤션센터 지도" 
+              className="w-full h-[120%] object-cover -translate-y-[15px]"
+            />
+          </div>
 
         {/* 안내 버튼 */}
         <div className="flex gap-3 mt-0">
@@ -33,23 +33,17 @@ export default function Page4() {
             href="https://www.shinhwaworld.com/howtogethere.jhtml?lang=kr"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 border border-white/20 bg-black/50 backdrop-blur-sm py-3 px-4 text-[16px] font-medium transition-all duration-300 hover:border-[#ff00a2] hover:text-[#ff00a2] active:bg-[#ff00a2]/10"
+            className="flex-1 flex items-center justify-center gap-2 border border-white/20 bg-black/60 py-3 px-4 text-[14px] text-white font-semibold transition-all duration-300 hover:border-[#ff00a2] hover:text-[#ff00a2] active:bg-[#ff00a2]/10"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-            대중교통 및 주차장 안내
+            대중교통, 주차장 안내
           </a>
           <a 
             href="https://naver.me/GTn3bYuT"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 border border-white/20 bg-black/50 backdrop-blur-sm py-3 px-4 text-[16px] font-medium transition-all duration-300 hover:border-[#00f191] hover:text-[#00f191] active:bg-[#00f191]/10"
+            className="flex-1 flex items-center justify-center gap-2 border border-white/20 bg-black/60 py-3 px-4 text-[14px] text-white font-semibold transition-all duration-300 hover:border-[#00f191] hover:text-[#00f191] active:bg-[#00f191]/10"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-            네이버지도
+            네이버 지도
           </a>
         </div>
       </motion.div>

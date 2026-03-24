@@ -8,7 +8,7 @@ import Page3 from './components/Page3';
 import Page4 from './components/Page4';
 import Page5 from './components/Page5';
 
-const pages = [Page0, Page1, Page2, Page3, Page4, Page5];
+const pages = [Page0, Page2, Page1, Page3, Page4, Page5];
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -45,7 +45,7 @@ function App() {
       isTransitioning.current = true;
       setTimeout(() => {
         isTransitioning.current = false;
-      }, 950);
+      }, 750);
     }
   };
 
@@ -72,8 +72,8 @@ function App() {
 
   const slideVariants = {
     initial: (direction) => ({
-      y: direction === 0 ? 0 : (direction > 0 ? '100%' : '-100%'),
-      opacity: direction === 0 ? 1 : 0,
+      y: direction === 0 ? 0 : (direction > 0 ? 80 : -80),
+      opacity: 0,
       scale: 1,
       zIndex: 1
     }),
@@ -82,14 +82,14 @@ function App() {
       opacity: 1,
       scale: 1,
       zIndex: 1,
-      transition: { duration: 0.85, ease: [0.23, 1, 0.32, 1] }
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
     },
     exit: (direction) => ({
-      y: direction < 0 ? '100%' : '-100%',
+      y: direction < 0 ? 80 : -80,
       opacity: 0,
       scale: 1,
       zIndex: 0,
-      transition: { duration: 0.85, ease: [0.23, 1, 0.32, 1] }
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
     })
   };
 
@@ -113,7 +113,7 @@ function App() {
           <img 
             src="/assets/logo_background.svg" 
             alt="방패 로고 워터마크" 
-            className="w-[50%] max-w-[250px] object-contain opacity-90"
+            className="w-[50%] max-w-[250px] object-contain grayscale brightness-0 invert"
           />
         </div>
       )}
@@ -148,7 +148,7 @@ function App() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.5))' }}>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </motion.div>

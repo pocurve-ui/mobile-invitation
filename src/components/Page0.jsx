@@ -67,7 +67,7 @@ export default function Page0({ setDirection, setCurrentPage }) {
           <img 
             src="/assets/mainpage_logo.svg" 
             alt="제주국제학교 기공식 로고" 
-            className="h-[98px] object-contain" 
+            className="h-[88px] object-contain" 
           />
         </motion.div>
 

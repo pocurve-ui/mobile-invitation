@@ -27,7 +27,7 @@ export default function Header({ currentPage, changePage }) {
         <img 
           src="/assets/logo_simple.svg" 
           alt="처음으로" 
-          className="h-[29px] w-auto object-contain shrink-0 brightness-0 invert"
+          className="h-[32px] w-auto object-contain shrink-0 brightness-0 invert"
         />
       </div>
 

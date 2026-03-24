@@ -40,7 +40,7 @@ export default function Page0({ setDirection, setCurrentPage }) {
 
       {/* 1. 배경 나침반 로고 (가장 밑바탕 z-0) */}
       <motion.div 
-        className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden"
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden isolate"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
@@ -94,13 +94,19 @@ export default function Page0({ setDirection, setCurrentPage }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.6 }}
       >
-        <p className="text-white text-[16px] font-sans tracking-tight font-medium mb-0 relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+        <p className="text-white text-[16px] font-sans tracking-tight font-medium mb-1 relative z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             FSAA 제주국제학교 기공식
         </p>
         <Countdown targetDate="2026-04-28T14:00:00+09:00" />
       </motion.div>
 
-
+      {/* 4. 하단 은은한 그라데이션 */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-[30%] pointer-events-none z-10"
+        style={{
+          background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%)'
+        }}
+      />
     </div>
   );
 }

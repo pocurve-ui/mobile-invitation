@@ -31,9 +31,9 @@ export default function Page3({ setCurrentPage, setDirection }) {
       >
         <div className="w-full text-white">
           {schedule.map((item, index) => (
-            <div key={index} className={`flex flex-col py-[6px] border-white/20 text-[14px] sm:text-[16px] ${index !== schedule.length - 1 ? 'border-b' : ''}`}>
+            <div key={index} className={`flex flex-col py-[6px] border-white/20 text-[16px] ${index !== schedule.length - 1 ? 'border-b' : ''}`}>
               <div className="flex w-full items-start">
-                <div className="font-bold tracking-tight shrink-0 w-[100px] sm:w-[110px] text-white">
+                <div className="font-bold tracking-tight shrink-0 w-[115px] sm:w-[125px] text-white">
                   {item.time}
                 </div>
                 <div className="font-normal tracking-tight text-gray-200 ml-4 flex-1">

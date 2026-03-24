@@ -19,11 +19,11 @@ export default function Page4() {
         </div>
 
           {/* 지도 이미지 공간 */}
-          <div className="w-full aspect-video bg-black overflow-hidden mb-4 border-[0.5px] border-white/20 flex items-center justify-center">
+          <div className="w-full aspect-[16/10] bg-black overflow-hidden mb-4 border-[0.5px] border-white/20 flex items-center justify-center">
             <img 
               src="/assets/map_illust3-black.png" 
               alt="제주신화월드 랜딩 컨벤션센터 지도" 
-              className="w-full h-[120%] object-cover -translate-y-[15px]"
+              className="w-full h-full object-contain -translate-y-[10px] scale-[1.07]"
             />
           </div>
 

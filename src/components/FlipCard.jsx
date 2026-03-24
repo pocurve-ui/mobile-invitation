@@ -26,7 +26,7 @@ const SingleDigit = ({ digit }) => {
   }, [digit, currentDigit]);
 
   return (
-    <div className="relative w-[20px] sm:w-[25px] h-[31px] sm:h-[40px] text-white text-[1.2rem] sm:text-[1.56rem] font-bold bg-transparent border-none rounded-[2px] overflow-hidden perspective">
+    <div className="relative w-[24px] sm:w-[25px] h-[37px] sm:h-[40px] text-white text-[1.45rem] sm:text-[1.56rem] font-bold bg-transparent border-none rounded-[2px] overflow-hidden perspective">
       {/* Static Top */}
       <div className="absolute inset-x-0 top-0 h-1/2 flex items-end justify-center rounded-t-[2px] bg-black/40 overflow-hidden">
         <span className="leading-[0] mt-[50%] absolute z-10 block translate-y-[2%] opacity-100 drop-shadow-sm">{nextDigit}</span>
@@ -64,7 +64,7 @@ const FlipCard = ({ digit, label }) => {
       </div>
       
       {/* Label (Days, Hours, Minutes, Seconds) */}
-      <span className="text-[12px] sm:text-[13px] text-white/90 font-light font-sans tracking-wide mt-[4px]">
+      <span className="text-[13px] sm:text-[13px] text-white/90 font-light font-sans tracking-wide mt-[1px]">
         {label}
       </span>
       

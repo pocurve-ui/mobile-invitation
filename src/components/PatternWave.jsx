@@ -87,7 +87,7 @@ export default function PatternWave() {
   const previousColor = waveIndex === 0 ? "#002288" : waveColors[(waveIndex - 1 + waveColors.length) % waveColors.length];
 
   return (
-    <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none z-10 overflow-hidden mix-blend-multiply">
+    <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none z-10 overflow-hidden mix-blend-screen transform-gpu will-change-transform">
       <style>
         {`
           @keyframes wave-fade {

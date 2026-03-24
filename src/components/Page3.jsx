@@ -33,8 +33,10 @@ export default function Page3({ setCurrentPage, setDirection }) {
           {schedule.map((item, index) => (
             <div key={index} className={`flex flex-col py-[6px] border-white/20 text-[16px] ${index !== schedule.length - 1 ? 'border-b' : ''}`}>
               <div className="flex w-full items-start">
-                <div className="font-bold tracking-tight shrink-0 w-[115px] sm:w-[125px] text-white">
-                  {item.time}
+                <div className="font-bold tracking-tight shrink-0 flex items-center text-white w-[115px]">
+                  <span className="w-[40px] text-left">{item.time.split(' - ')[0]}</span>
+                  <span className="w-[20px] text-center font-normal">{item.time.includes(' -') ? '-' : ''}</span>
+                  <span className="w-[45px] text-left">{item.time.split(' - ')[1] || ''}</span>
                 </div>
                 <div className="font-normal tracking-tight text-gray-200 ml-4 flex-1">
                   {item.title}
